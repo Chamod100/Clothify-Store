@@ -1,11 +1,24 @@
 package org.example.controller;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
-public class DashbordFormController {
+import javafx.util.Duration;
+
+import java.net.URL;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ResourceBundle;
+
+public class DashbordFormController implements Initializable {
 
     @FXML
     private AnchorPane LodeFormContent;
@@ -25,6 +38,11 @@ public class DashbordFormController {
     @FXML
     private Label lblUserName;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        loadDateAndTime();
+
+    }
 
     @FXML
     void btnEmployeeOnAction(ActionEvent event) {
@@ -64,6 +82,24 @@ public class DashbordFormController {
     @FXML
     void logOutBtnOnAction(ActionEvent event) {
 
+    }
+
+    Date date;
+    private void loadDateAndTime() {
+        date = Date.valueOf(LocalDate.now());
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        lblDate.setText(f.format(date));
+
+        Timeline time = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            LocalTime cTime = LocalTime.now();
+            lblTime.setText(
+                    cTime.getHour() + ":" + cTime.getMinute() + ":" + cTime.getSecond()
+            );
+        }),
+                new KeyFrame(Duration.seconds(1))
+        );
+        time.setCycleCount(Animation.INDEFINITE);
+        time.play();
     }
 
 }
