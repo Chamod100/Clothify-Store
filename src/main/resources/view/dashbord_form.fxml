@@ -1,14 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.controller.DashbordFormController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="770.0" prefWidth="1343.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.DashbordFormController">
+
+    <ImageView fitHeight="776.0" fitWidth="1354.0">
+      <image>
+         <Image url="@../image/Clothify.jpg" />
+      </image>
+    </ImageView>
+
+    <Rectangle fill="black" height="776.0" opacity="0.45" width="1354.0" />
+
+    <HBox layoutX="283.0" prefHeight="70" prefWidth="1070.0" style="-fx-background-color: 4D4D4D; -fx-padding: 15;">
+
+        <children>
+
+            <Label fx:id="lblUserName" alignment="CENTER" prefHeight="77.0" prefWidth="118.0" style="-fx-background-color: rgba(0,0,0,0.55);" text="Hello User" textFill="white">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+
+            <Separator orientation="VERTICAL" prefHeight="48.0" prefWidth="37.0" style="-fx-padding: 0 15; -fx-background-color: rgba(0,0,0,0.55);" />
+
+            <Label fx:id="lblUserAType" prefHeight="44.0" prefWidth="87.0" text="Admin" textFill="white" />
+
+            <HBox prefHeight="70.0" prefWidth="464.0" style="-fx-background-color: rgba(0,0,0,0.55);" />
+
+            <Label fx:id="lblDate" alignment="CENTER" prefHeight="70.0" prefWidth="109.0" style="-fx-background-color: rgba(0,0,0,0.55);" text="2025-01-01" textFill="white">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+            <Label fx:id="lblTime" alignment="CENTER" prefHeight="71.0" prefWidth="110.0" style="-fx-padding: 0 20 0 20; -fx-background-color: rgba(0,0,0,0.55);" text="10:00:00" textFill="white">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+
+            <JFXButton onAction="#logOutBtnOnAction" prefHeight="73.0" prefWidth="146.0" style="-fx-background-color: rgba(0,0,0,0.55);" text="Logout" textFill="WHITE">
+                <graphic>
+                    <ImageView fitWidth="30" preserveRatio="true" style="-fx-blend-mode: black;">
+                        <image>
+                            <Image url="@../image/icons8-back-100.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+            </JFXButton>
+
+        </children>
+    </HBox>
+
+    <AnchorPane fx:id="LodeFormContent" layoutX="283.0" layoutY="72.0" prefHeight="704.0" prefWidth="1070.0" style="-fx-background-color: rgba(255,255,255,0.1); -fx-background-radius: 20; -fx-background-color: transparent;">
+      <children>
+         <Separator layoutY="-5.0" prefHeight="3.0" prefWidth="1070.0" style="-fx-background-color: black;" />
+      </children></AnchorPane>
+   <AnchorPane layoutX="-3.0" layoutY="-7.0" prefHeight="782.0" prefWidth="286.0" style="-fx-background-color: rgba(0,0,0,0.55);">
+      <children>
+
+            <HBox layoutX="31.0" layoutY="31.0" prefHeight="33.0" prefWidth="234.0" spacing="15">
+                <children>
+                    <ImageView fitHeight="50" fitWidth="50" preserveRatio="true">
+                        <image>
+                            <Image url="@../image/icons8-clothing-store-64.png" />
+                        </image>
+                    </ImageView>
+
+                    <Label alignment="BOTTOM_LEFT" prefHeight="50.0" prefWidth="180.0" text="Clothify Store" textFill="white">
+                        <font>
+                            <Font name="System Bold" size="26" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+
+            <Separator layoutX="53.0" layoutY="110.0" prefWidth="180" />
+
+
+            <VBox layoutX="31.0" layoutY="148.0" prefHeight="72.0" prefWidth="200.0" spacing="5">
+                <children>
+                    <JFXButton onAction="#btnOrderOnAction" prefWidth="200" style="-fx-background-color: white; -fx-background-radius: 10;" text="Button">
+                        <graphic>
+                            <ImageView fitHeight="41.0" fitWidth="45" preserveRatio="true">
+                                <image>
+                                    <Image url="@../image/icons8-supplies-64.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </JFXButton>
+                    <Label text="Order" textFill="white" />
+                </children>
+            </VBox>
+
+            <VBox layoutX="31.0" layoutY="226.0" spacing="5">
+                <children>
+                    <JFXButton onAction="#btnItemOnAction" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Button">
+                        <graphic>
+                            <ImageView fitHeight="41.0" fitWidth="45" preserveRatio="true">
+                                <image>
+                                    <Image url="@../image/icons8-vegan-clothing-50.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </JFXButton>
+                    <Label text="Items" textFill="white" />
+                </children>
+            </VBox>
+
+            <VBox layoutX="31.0" layoutY="304.0" spacing="5">
+                <children>
+                    <JFXButton onAction="#btnEmployeeOnAction" prefWidth="200" style="-fx-background-color: white; -fx-background-radius: 10;" text="Button">
+                        <graphic>
+                            <ImageView fitHeight="41.0" fitWidth="45" preserveRatio="true">
+                                <image>
+                                    <Image url="@../image/icons8-employee-50.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </JFXButton>
+                    <Label text="Employee" textFill="white" />
+                </children>
+            </VBox>
+
+            <VBox layoutX="32.0" layoutY="384.0" spacing="5">
+                <children>
+                    <JFXButton onAction="#btnSupplierOnAction" prefWidth="200" style="-fx-background-color: white; -fx-background-radius: 10;" text="Button">
+                        <graphic>
+                            <ImageView fitHeight="41.0" fitWidth="45" preserveRatio="true">
+                                <image>
+                                    <Image url="@../image/icons8-supplier-50.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </JFXButton>
+                    <Label text="Supplier" textFill="white" />
+                </children>
+            </VBox>
+
+            <VBox layoutX="31.0" layoutY="465.0" spacing="5">
+                <children>
+                    <JFXButton onAction="#btnOrderDetailsOnAction" prefWidth="200" style="-fx-background-color: white; -fx-background-radius: 10;" text="Button">
+                        <graphic>
+                            <ImageView fitHeight="41.0" fitWidth="45" preserveRatio="true">
+                                <image>
+                                    <Image url="@../image/icons8-order-50.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </JFXButton>
+                    <Label text="Order Details" textFill="white" />
+                </children>
+            </VBox>
+
+            <VBox layoutX="31.0" layoutY="546.0" spacing="5">
+                <children>
+                    <JFXButton onAction="#btnSalesReturnOnAction" prefWidth="200" style="-fx-background-color: white; -fx-background-radius: 10;" text="Button">
+                        <graphic>
+                            <ImageView fitHeight="41.0" fitWidth="45" preserveRatio="true">
+                                <image>
+                                    <Image url="@../image/icons8-return-50.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </JFXButton>
+                    <Label text="Sales Return" textFill="white" />
+                </children>
+            </VBox>
+
+            <VBox layoutX="31.0" layoutY="625.0" prefHeight="28.0" prefWidth="238.0" spacing="5">
+                <children>
+                    <JFXButton onAction="#btnReportsOnAction" prefWidth="200" style="-fx-background-color: white; -fx-background-radius: 10;" text="Button">
+                        <graphic>
+                            <ImageView fitHeight="41.0" fitWidth="45" preserveRatio="true">
+                                <image>
+                                    <Image url="@../image/icons8-sales-growth-64.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </JFXButton>
+                    <Label text="Reports" textFill="white" />
+                </children>
+            </VBox>
+
+            <Label fx:id="lblUserEmail1" alignment="CENTER" layoutX="37.0" layoutY="700.0" prefHeight="33.0" prefWidth="187.0" style="-fx-padding: 30 0 0 0;" text="chamodrathnayaka008@gmail.com" textFill="white" />
+      </children>
+   </AnchorPane>
 
 </AnchorPane>
