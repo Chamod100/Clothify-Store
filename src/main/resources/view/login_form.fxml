@@ -1,14 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="533.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.LoginFormController">
 
+<children>
+    <ImageView fitHeight="555.0" fitWidth="405.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../image/katalin-salles-jMcFxisbKN8-unsplash.jpg" />
+        </image>
+         <effect>
+            <GaussianBlur radius="5.29" />
+         </effect>
+    </ImageView>
+    <Rectangle arcHeight="50.0" arcWidth="50.0" height="453.0" layoutX="48.0" layoutY="48.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="273.0" />
+    <ImageView fitHeight="83.0" fitWidth="74.0" layoutX="152.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../image/icons8-clothing-store.png" />
+        </image>
+    </ImageView>
+    <Label layoutX="88.0" layoutY="148.0" prefWidth="202.0" text="Clothify Store" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="31.0" />
+        </font>
+    </Label>
+    <Label layoutX="100.0" layoutY="521.0" text="\@2025 Chamod-Rathnayaka">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+    <Label layoutX="490.0" layoutY="68.0" prefHeight="68.0" prefWidth="125.0" text="Login">
+        <font>
+            <Font name="System Bold" size="46.0" />
+        </font>
+    </Label>
+    <JFXTextField fx:id="txtUserName" focusColor="RED" layoutX="473.0" layoutY="197.0" prefHeight="25.0" prefWidth="211.0" promptText="User Name" />
+    <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="442.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../image/icons8-clothing-store-64.png" />
+        </image>
+    </ImageView>
+    <JFXPasswordField fx:id="txtPassword" focusColor="RED" layoutX="473.0" layoutY="292.0" prefHeight="25.0" prefWidth="211.0" promptText="Password" />
+    <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="443.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../image/icons8-password-50.png" />
+        </image>
+    </ImageView>
+    <Label layoutX="471.0" layoutY="336.0" onMouseClicked="#lblMouseClickOnAction" opacity="0.54" text="Forgot Password?">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Label>
+    <Label layoutX="568.0" layoutY="503.0" onMouseClicked="#lblRegisterMouseClickOnAction" opacity="0.54" text="Register" underline="true">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Label>
+    <Label layoutX="475.0" layoutY="503.0" opacity="0.54" text="Not a member ?">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Label>
+    <Label layoutX="102.0" layoutY="234.0" text="With decades of maintenance of " textFill="#e1e1e1" />
+    <Label layoutX="97.0" layoutY="252.0" prefHeight="17.0" prefWidth="175.0" text="way expertise and experience, no" textFill="#e1e1e1" />
+    <Label layoutX="108.0" layoutY="269.0" prefHeight="17.0" prefWidth="162.0" text="one knows the rail like Loram. " textFill="#e1e1e1" />
+    <Label layoutX="91.0" layoutY="288.0" prefHeight="17.0" prefWidth="196.0" text="Today, with our Loram Technologies" textFill="#e1e1e1" />
+    <Label layoutX="97.0" layoutY="305.0" prefHeight="17.0" prefWidth="184.0" text="business group, we’re leveraging " textFill="#e1e1e1" />
+    <Label layoutX="93.0" layoutY="336.0" text="With decades of maintenance of " textFill="#e1e1e1" />
+    <Label layoutX="96.0" layoutY="353.0" prefHeight="17.0" prefWidth="175.0" text="way expertise and experience, no" textFill="#e1e1e1" />
+    <Label layoutX="103.0" layoutY="370.0" prefHeight="17.0" prefWidth="162.0" text="one knows the rail like Loram. " textFill="#e1e1e1" />
+    <Label layoutX="91.0" layoutY="388.0" prefHeight="17.0" prefWidth="196.0" text="Today, with our Loram Technologies" textFill="#e1e1e1" />
+    <Label layoutX="97.0" layoutY="406.0" prefHeight="17.0" prefWidth="184.0" text="business group, we’re leveraging " textFill="#e1e1e1" />
+    <JFXButton layoutX="515.0" layoutY="424.0" onAction="#btnLoginOnAction" prefHeight="31.0" prefWidth="86.0" style="-fx-background-color: black;" text="Login" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="15.0" />
+        </font>
+    </JFXButton>
+</children>
 </AnchorPane>
