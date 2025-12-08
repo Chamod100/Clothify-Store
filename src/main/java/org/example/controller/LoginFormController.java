@@ -21,7 +21,7 @@ import java.sql.SQLException;
 
 public class LoginFormController {
 
-    public JFXTextField txtEmail;
+    public JFXTextField txtUserName;
     public JFXPasswordField txtPassword;
     public AnchorPane root;
 
@@ -54,7 +54,7 @@ public class LoginFormController {
     public  User getLogInUser(){
         try {
             ResultSet rst= CrudUtill.execute("SELECT * FROM user\n" +
-                    "WHERE email = ? AND password = ? AND (user_type = 'admin' OR user_type = 'user');",txtEmail.getText(),txtPassword.getText());
+                    "WHERE username = ? AND password = ? AND (user_type = 'admin' OR user_type = 'user');",txtUserName.getText(),txtPassword.getText());
             while (rst.next()){
                 return new User(rst.getInt(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5));
             }
