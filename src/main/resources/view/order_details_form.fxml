@@ -45,7 +45,7 @@
             </font>
         </Label>
         <JFXTextField focusColor="WHITE" layoutX="149.0" layoutY="134.0" prefHeight="25.0" prefWidth="141.0" unFocusColor="#ffaaaa" />
-        <TableView layoutX="54.0" layoutY="187.0" prefHeight="200.0" prefWidth="867.0" styleClass="dashboard-colour2" stylesheets="@..">
+        <TableView layoutX="54.0" layoutY="187.0" prefHeight="200.0" prefWidth="867.0" styleClass="dashboard-colour2" stylesheets="@../css/Table.css">
             <columns>
                 <TableColumn prefWidth="75.0" text="Order ID" />
                 <TableColumn prefWidth="91.0" text="Date" />
@@ -57,7 +57,7 @@
                 <TableColumn prefWidth="133.0" text="Arrears" />
             </columns>
         </TableView>
-        <TableView layoutX="56.0" layoutY="409.0" prefHeight="200.0" prefWidth="867.0" styleClass="dashboard-colour2" stylesheets="@..">
+        <TableView layoutX="56.0" layoutY="409.0" prefHeight="200.0" prefWidth="867.0" styleClass="dashboard-colour2" stylesheets="@../css/Table.css">
             <columns>
                 <TableColumn prefWidth="75.0" text="Item Code" />
                 <TableColumn prefWidth="105.0" text="Description" />

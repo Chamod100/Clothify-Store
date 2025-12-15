@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import org.mindrot.jbcrypt.BCrypt;
 
 public class LoginFormController {
 
@@ -27,16 +27,16 @@ public class LoginFormController {
 
     public void btnLoginOnAction(ActionEvent actionEvent) {
         User user = getLogInUser();
-        if (user!=null){
+        if (user != null) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/dashbord_form.fxml"));
                 // fxmlLoader.setControllerFactory(controllerClass -> new DashBordFormController(user));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root1));
-                // Get the current window
+            // Get the current window
                 Stage currentStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                // Close the previous window
+            // Close the previous window
                 currentStage.close();
                 stage.setResizable(false);
                 stage.show();
@@ -44,34 +44,45 @@ public class LoginFormController {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }else {
-            new Alert(Alert.AlertType.ERROR, "Your Password or Email incorrect try again!").show();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Your Password or UserName incorrect try again!").show();
         }
-
-
     }
 
-    public  User getLogInUser(){
+    public User getLogInUser() {
+        String enteredUserName = txtUserName.getText();
+        String enteredPassword = txtPassword.getText();
+
         try {
-            ResultSet rst= CrudUtill.execute("SELECT * FROM user\n" +
-                    "WHERE username = ? AND password = ? AND (user_type = 'admin' OR user_type = 'user');",txtUserName.getText(),txtPassword.getText());
-            while (rst.next()){
-                return new User(rst.getInt(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5));
+            ResultSet rst = CrudUtill.execute("SELECT * FROM user WHERE user_name = ? AND (user_type = 'admin' OR user_type = 'user');",
+                    enteredUserName
+            );
+
+            if (rst.next()) {
+                String hashedPasswordFromDB = rst.getString("password");
+
+                if (BCrypt.checkpw(enteredPassword, hashedPasswordFromDB)) {
+                    return new User(rst.getInt(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getString(5));
+                } else {
+                    return null;
+                }
             }
         } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Login Error: " + e.getMessage(), e);
         }
+
         return null;
     }
+
     public void lblMouseClickOnAction(MouseEvent mouseEvent) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/forgot_password_form.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
-            // Get the current window
+        // Get the current window
             Stage currentStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            // Close the previous window
+        // Close the previous window
             currentStage.close();
             stage.setResizable(false);
             stage.show();
