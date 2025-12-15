@@ -1,6 +1,6 @@
 package org.example.remository.custom.impl;
 
-import org.example.Model.DTO.CR.OrderDetailsCR;
+import org.example.Model.DTO.TM.OrderDetailsCR;
 import org.example.Model.DTO.OrderDetailsDTO;
 import org.example.remository.custom.OrderDetailsDao;
 

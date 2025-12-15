@@ -1,6 +1,6 @@
 package org.example.remository.custom.impl;
 
-import org.example.Model.DTO.CR.OrderCR;
+import org.example.Model.DTO.TM.OrderTM;
 import org.example.Model.DTO.OrderDTO;
 import org.example.remository.custom.OrderDao;
 
@@ -24,7 +24,7 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public List<OrderCR> findAll() {
+    public List<OrderTM> findAll() {
         return null;
     }
 
