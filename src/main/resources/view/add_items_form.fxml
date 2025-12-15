@@ -63,7 +63,7 @@
             </font>
         </Label>
         <JFXTextField focusColor="WHITE" layoutX="230.0" layoutY="279.0" prefHeight="25.0" prefWidth="195.0" unFocusColor="#ffaaaa" />
-        <TableView layoutX="100.0" layoutY="375.0" prefHeight="200.0" prefWidth="765.0" styleClass="dashboard-colour2" stylesheets="@..">
+        <TableView layoutX="100.0" layoutY="375.0" prefHeight="200.0" prefWidth="765.0" styleClass="dashboard-colour2" stylesheets="@../css/Table.css">
             <columns>
                 <TableColumn prefWidth="58.0" text="Code" />
                 <TableColumn text="Description" />
