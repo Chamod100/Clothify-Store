@@ -66,7 +66,7 @@
             </font>
         </Label>
         <JFXTextField fx:id="txtEmpAddress" focusColor="WHITE" layoutX="266.0" layoutY="321.0" prefHeight="30.0" prefWidth="250.0" promptText="address" style="-fx-background-color: white;" unFocusColor="#08007c" />
-        <TableView fx:id="empTable" layoutX="57.0" layoutY="375.0" prefHeight="237.0" prefWidth="978.0" styleClass="dashboard-colour2" stylesheets="@..">
+        <TableView fx:id="empTable" layoutX="57.0" layoutY="375.0" prefHeight="237.0" prefWidth="978.0" styleClass="dashboard-colour2" stylesheets="@../css/Table.css">
             <columns>
                 <TableColumn fx:id="empColId" prefWidth="75.0" text="ID" />
                 <TableColumn fx:id="empColName" prefWidth="106.0" text="Name" />
